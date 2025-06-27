@@ -313,7 +313,7 @@ export default function Game({ playerId, playerName }: GameProps) {
   return (
     <div className="flex flex-col items-center p-4">
       <div className="mb-4 text-center">
-        <h2 className="text-xl font-bold">Gather Town Clone</h2>
+        <h2 className="text-xl font-bold">Welcome to LostClub Gathering</h2>
         <p className="text-sm text-gray-600">Use WASD or arrow keys to move</p>
         <div className="flex items-center justify-center gap-2 mt-2">
           <div
@@ -324,6 +324,16 @@ export default function Game({ playerId, playerName }: GameProps) {
             player{players.size !== 1 ? "s" : ""} online
           </span>
         </div>
+      </div>
+      <canvas
+        ref={canvasRef}
+        width={CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
+        className="border border-gray-300 rounded-lg shadow-lg"
+        tabIndex={0}
+      />
+      <div>
+        {" "}
         {nearbyAreas.length > 0 && (
           <div className="mt-2 p-2 bg-blue-50 border border-blue-200 rounded-md">
             <p className="text-xs text-blue-700 font-medium">Nearby Areas:</p>
@@ -336,13 +346,6 @@ export default function Game({ playerId, playerName }: GameProps) {
           </div>
         )}
       </div>
-      <canvas
-        ref={canvasRef}
-        width={CANVAS_WIDTH}
-        height={CANVAS_HEIGHT}
-        className="border border-gray-300 rounded-lg shadow-lg"
-        tabIndex={0}
-      />
     </div>
   );
 }
