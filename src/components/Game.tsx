@@ -289,7 +289,7 @@ export default function Game({ playerId, playerName }: GameProps) {
         socketRef.current.disconnect();
       }
     };
-  }, [currentPlayer.id]);
+  }, [currentPlayer]); // Changed from [currentPlayer.id] to [currentPlayer]
 
   useEffect(() => {
     const gameLoop = setInterval(() => {
