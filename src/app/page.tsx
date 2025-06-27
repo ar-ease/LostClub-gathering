@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import Game from "@/components/Game";
-import { getRandomColor } from "@/constants/game";
 
 export default function Home() {
   const [isJoined, setIsJoined] = useState(false);
